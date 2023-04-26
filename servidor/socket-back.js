@@ -1,9 +1,10 @@
-import registrarEventoDocumento from "./registrarEventos/registrarEventoDocumento.js";
-import registrarEventoInicio from "./registrarEventos/registrarEventosInicio.js";
+import registrarEventoDocumento from "./registrarEventos/documento.js";
+import registrarEventosCadastro from "./registrarEventos/cadastro.js";
+import registrarEventoInicio from "./registrarEventos/inicio.js";
 import io from "./servidor.js";
 
 io.on("connection", (socket) => {
   registrarEventoInicio(socket, io);
   registrarEventoDocumento(socket, io);
-
+  registrarEventosCadastro(socket, io);
 });
