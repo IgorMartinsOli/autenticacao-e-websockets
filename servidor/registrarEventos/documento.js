@@ -5,7 +5,8 @@ import {
 } from "../db/documentosDb.js";
 
 function registrarEventoDocumento(socket, io) {
-    socket.on("selecionar_documento", async (nomeDocumento, devolverTexto) => {
+    socket.on("selecionar_documento", async ({nomeDocumento, nomeUsuario}, devolverTexto) => {
+        console.log(nomeUsuario)
         socket.join(nomeDocumento);
     
         const documento = await encontrarDocumento(nomeDocumento);
