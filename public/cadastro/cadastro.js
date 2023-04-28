@@ -7,6 +7,6 @@ form.addEventListener('submit', (evento) => {
 
     const nome = form['input-usuario'].value;
     const senha = form['input-senha'].value;
-    
+
     emitirCadastrarUsuario({nome, senha});
-})
+});
